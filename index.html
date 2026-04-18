@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parenting Notebook</title>
+    <style>
+        :root {
+            --primary-color: #5d5c5c;
+            --accent-color: #ff9a9e;
+            --bg-color: #ffffff;
+            --text-dark: #333;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.7;
+            background-color: #fdfbfb;
+        }
+
+        /* --- Header --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .header-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+        .lang-switcher button {
+            background: #eee;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            margin-left: 5px;
+        }
+        .lang-switcher button.active {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 60vh;
+            background: 
+                linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)),
+                url('https://images.unsplash.com/photo-1476703728296-64f21809678b?q=80&w=2070&auto=format&fit=crop') no-repeat center/cover;
+            /* ↑ここのURLを実際のお子様の写真に変更可能です */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            color: rgba(0,0,0,0.7);
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.8);
+            letter-spacing: 2px;
+        }
+
+        /* --- Main Content --- */
+        main {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+        }
+        h2 {
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+            margin-bottom: 30px;
+        }
+        .point-item {
+            margin-bottom: 25px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+        .point-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 8px;
+            color: #d16b6f;
+        }
+        .point-content {
+            white-space: pre-wrap;
+            font-size: 0.95rem;
+        }
+
+        /* --- Hidden elements --- */
+        [lang="tl"], [lang="jp"] { display: none; }
+        body.lang-tl [lang="tl"] { display: block; }
+        body.lang-jp [lang="jp"] { display: block; }
+
+        /* --- Footer/Top Button --- */
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--accent-color);
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-size: 0.8rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body id="top" class="lang-tl">
+
+    <header>
+        <div class="header-inner">
+            <nav>
+                <a href="#top">TOP</a>
+                <a href="#points">ポイント</a>
+            </nav>
+            <div class="lang-switcher">
+                <button id="btn-tl" class="active" onclick="switchLang('tl')">TL</button>
+                <button id="btn-jp" onclick="switchLang('jp')">JP</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Parenting Notebook</h1>
+    </section>
+
+    <main id="points">
+        <div class="card">
+            <div lang="tl">
+                <h2>■ ASD toddler (malapit 2 years old): Gabay para sa Nanay</h2>
+                
+                <div class="point-item">
+                    <span class="point-title">① Daily routine / base ng development</span>
+                    <div class="point-content">Same schedule araw-araw (gising, kain, tulog)
+Pare-pareho ang flow ng araw (predictable = mas kampante si baby)
+Iwas sa sobrang ingay / stimulus (TV, maraming tao)</div>
+                </div>
+
+                <div class="point-item">
+                    <span class="point-title">② Communication (pinaka-importante)</span>
+                    <div class="point-content">Short, simple, slow na salita
+OK lang kahit walang eye contact (huwag pilitin)
+Sumabay sa interest niya (hal. cars)
+Sa crane behavior → lagyan ng words: “kuha”, “give”, “more”</div>
+                </div>
+
+                <div class="point-item">
+                    <span class="point-title">③ Paano palakihin ang speech</span>
+                    <div class="point-content">Gumawa ng situation na kailangan niya mag-request
+Ulitin ang basic words: “more”, “give”, “wait”
+Gamitin gestures + words
+Kahit mali, i-accept at i-encourage</div>
+                </div>
+
+                <div class="point-item">
+                    <span class="point-title">④ Food (very important)</span>
+                    <div class="point-content">Milk only = medyo risk (nutrition & development)
+Huwag pilitin (lalo lang magre-refuse)
+Step by step (puree → soft → solid)
+Hanapin kung anong taste/texture ang OK sa kanya
+👉 Kung hirap, consult doctor or nutritionist</div>
+                </div>
+
+                <div class="point-item">
+                    <span class="point-title">⑤ YouTube control</span>
+                    <div class="point-content">YouTube (like cocomelon) → OK pero controlled
+Max around 1 hour/day. I-connect sa real play (songs → actual play)</div>
+                </div>
+
+                <div class="point-item">
+                    <span class="point-title">⑥ Play development</span>
+                    <div class="point-content">Sumali sa car play niya. Lagyan ng words: “go”, “stop”
+From solo play → parallel play → interaction</div>
+                </div>
+
+                <div class="point-item">
+                    <span class="point-title">⑦ Social (tao sa paligid)</span>
+                    <div class="point-content">Start sa mga taong gusto niya. Huwag pilitin makipaglaro sa kuya
+Turuan si kuya paano makipag-interact (gentle, simple)</div>
+                </div>
+
+                <div class="point-item">
+                    <span class="point-title">⑧ Behavior handling</span>
+                    <div class="point-content">Huwag puro “no”, turuan kung ano ang gagawin
+Kapag meltdown → bawasan ang stimulus. I-praise ang good behavior</div>
+                </div>
+
+                <div class="point-item">
+                    <span class="point-title">⑨ Therapy / support</span>
+                    <div class="point-content">Mag-start ng therapy early (very important)
+Consistent approach sa bahay at therapy</div>
+                </div>
+
+                <div class="point-item">
+                    <span class="point-title">⑩ Mindset ng nanay</span>
+                    <div class="point-content">Hindi kailangan perfect. Focus sa progress, kahit maliit.
+Humingi ng tulong kung kailangan.</div>
+                </div>
+
+                <hr>
+                <div class="point-content" style="background:#fff5f5; padding:15px; border-radius:10px;">
+<strong>■ Important note</strong>
+Typical early ASD pattern (Crane, YouTube fixation, Food issue), pero malaki pa chance mag-improve. Focus sa Speech, Food, at Social. Dito lalabas ang malaking growth from 3–5 years old.
+                </div>
+            </div>
+
+            <div lang="jp">
+                <h2>■ ASD 幼児（2歳前後）：ママのためのガイド</h2>
+                
+                <div class="point-item">
+                    <span class="point-title">① ルーティン / 発達の土台</span>
+                    <div class="point-content">毎日同じスケジュール（起床、食事、就寝）
+一日の流れを固定する（予測可能＝安心感）
+過度な刺激を避ける（TV、人混み）</div>
+                </div>
+
+                <div class="point-item">
+                    <span class="point-title">② コミュニケーション（最重要）</span>
+                    <div class="point-content">短く、シンプルに、ゆっくり話す
+目を合わせなくてもOK（無理強いしない）
+本人の興味（車など）に合わせる
+クレーン現象には言葉を添える：「取って」「ちょうだい」「もっと」</div>
+                </div>
+
+                <div class="point-item">
+                    <span class="point-title">③ 発語を促すには</span>
+                    <div class="point-content">リクエストが必要な状況を作る
+基本の言葉を繰り返す：「もっと」「ちょうだい」「待って」
+ジェスチャーと言葉をセットで使う
+言い間違いも受け入れ、褒める</div>
+                </div>
+
+                <div class="point-item">
+                    <span class="point-title">④ 食事（非常に重要）</span>
+                    <div class="point-content">牛乳のみは栄養・発達上のリスク
+無理強いしない（余計に拒絶するため）
+スモールステップ（ピューレ→軟らかい→固形）
+好みの味や食感を探す
+👉 困難な場合は医師や栄養士に相談</div>
+                </div>
+
+                <div class="point-item">
+                    <span class="point-title">⑤ YouTubeのコントロール</span>
+                    <div class="point-content">YouTube（Cocomelon等）は時間を決めて
+1日最大1時間程度。リアルの遊びに繋げる（歌→実際の動作）</div>
+                </div>
+
+                <div class="point-item">
+                    <span class="point-title">⑥ 遊びの発達</span>
+                    <div class="point-content">車遊びなどに参加する（すぐに変えようとしない）
+言葉を添える：「ゴー」「ストップ」
+一人遊び→並行遊び→相互のやり取りへ</div>
+                </div>
+
+                <div class="point-item">
+                    <span class="point-title">⑦ 社会性（周囲の人）</span>
+                    <div class="point-content">好きな人から始める。お兄ちゃんと無理に遊ばせない
+お兄ちゃんに接し方を教える（優しく、シンプルに）</div>
+                </div>
+
+                <div class="point-item">
+                    <span class="point-title">⑧ 行動への対応</span>
+                    <div class="point-content">「ダメ」だけでなく「何をするか」を教える
+パニック時は刺激を減らす。良い行動を褒める</div>
+                </div>
+
+                <div class="point-item">
+                    <span class="point-title">⑨ 療育 / サポート</span>
+                    <div class="point-content">早期療育の開始（非常に重要）
+家庭と療育先でアプローチを統一する</div>
+                </div>
+
+                <div class="point-item">
+                    <span class="point-title">⑩ ママのマインドセット</span>
+                    <div class="point-content">完璧でなくていい。他人と比較しない。
+小さな成長に目を向ける。助けを求める。</div>
+                </div>
+
+                <hr>
+                <div class="point-content" style="background:#f0f7ff; padding:15px; border-radius:10px;">
+<strong>■ 重要なノート</strong>
+クレーン現象や執着、偏食は典型的な初期サインですが、改善の可能性は十分あります。言葉・食事・社会性にフォーカスしましょう。3歳から5歳にかけて大きな成長が見られます。
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <a href="#top" id="back-to-top">TOP</a>
+
+    <script>
+        function switchLang(lang) {
+            document.body.className = 'lang-' + lang;
+            document.getElementById('btn-tl').classList.toggle('active', lang === 'tl');
+            document.getElementById('btn-jp').classList.toggle('active', lang === 'jp');
+        }
+    </script>
+</body>
+</html>
