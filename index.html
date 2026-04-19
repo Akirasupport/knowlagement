@@ -3,19 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Parenting Notebook</title>
+<title>Parenting Notebook - ASD Toddler Guide</title>
 
 <style>
 :root {
     --primary-color: #4a4a4a;
     --accent-color: #ff8c94;
     --bg-color: #fdfcfc;
+    --card-bg: #ffffff;
+    --note-bg: #fff0f0;
 }
 
 body {
     margin: 0;
-    font-family: sans-serif;
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
     background: var(--bg-color);
+    color: var(--primary-color);
+    line-height: 1.6;
 }
 
 /* header */
@@ -25,11 +29,15 @@ header {
     width: 100%;
     background: white;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
 }
 .header-inner {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 10px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 nav a {
     margin-right: 15px;
@@ -37,36 +45,79 @@ nav a {
     color: #333;
     font-weight: bold;
 }
+.lang-buttons button {
+    padding: 5px 12px;
+    cursor: pointer;
+    border: 1px solid var(--accent-color);
+    background: white;
+    border-radius: 5px;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+.lang-buttons button:hover {
+    background: var(--accent-color);
+    color: white;
+}
 
 /* hero */
 .hero {
-    height: 65vh;
+    height: 40vh; /* 少し高さを調整 */
     background: url('brother.jpg') center/cover no-repeat;
+    background-color: #ddd; /* 画像がない場合の代替色 */
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 50px;
 }
 .hero h1 {
-    background: rgba(255,255,255,0.7);
-    padding: 20px;
+    background: rgba(255,255,255,0.8);
+    padding: 20px 40px;
     border-radius: 10px;
+    font-size: 1.5rem;
 }
 
 /* content */
 main {
-    max-width: 900px;
+    max-width: 800px;
     margin: 40px auto;
-    padding: 20px;
+    padding: 0 20px;
 }
 .card {
-    background: white;
+    background: var(--card-bg);
     padding: 30px;
     border-radius: 15px;
     margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
-/* lang */
+h2 {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+    margin-top: 30px;
+}
+h3 {
+    font-size: 1.2rem;
+    color: #444;
+    margin-top: 25px;
+}
+
+ul {
+    padding-left: 20px;
+}
+li {
+    margin-bottom: 8px;
+}
+
+.important-note {
+    background: var(--note-bg);
+    padding: 20px;
+    border-left: 5px solid var(--accent-color);
+    border-radius: 5px;
+    margin-top: 40px;
+}
+
+/* lang switching logic */
 [lang="tl"], [lang="jp"] { display:none; }
 body.lang-tl [lang="tl"] { display:block; }
 body.lang-jp [lang="jp"] { display:block; }
@@ -80,41 +131,214 @@ body.lang-jp [lang="jp"] { display:block; }
 <div class="header-inner">
 <nav>
 <a href="index.html">TOP</a>
-<a href="#">ASDとは</a>
+<a href="#">ASD info</a>
 <a href="QAs/QA1.html">QAs</a>
 <a href="Posting/index.html">Posting</a>
 </nav>
 
-<div>
-<button onclick="switchLang('tl')">TL</button>
-<button onclick="switchLang('jp')">JP</button>
+<div class="lang-buttons">
+<button onclick="switchLang('tl')">Tagalog</button>
+<button onclick="switchLang('jp')">日本語</button>
 </div>
 </div>
 </header>
 
 <section class="hero">
-<h1>Parenting Notebook</h1>
+<h1 lang="tl">Parenting Notebook</h1>
+<h1 lang="jp">育児ノート</h1>
 </section>
 
 <main>
-<div class="card">
+    <div class="card">
+        <div lang="tl">
+            <h2>ASD toddler (malapit 2 years old): Gabay para sa Nanay</h2>
+            <p>Ito ay gabay para matulungan ang development ni baby. Para sa mas detalyadong sagot, pumunta sa QAs.</p>
 
-<div lang="tl">
-<h2>ASD Toddler Guide</h2>
-<p>Go to QAs for detailed answers</p>
-</div>
+            <h3>① Daily routine / base ng development</h3>
+            <ul>
+                <li>Same schedule araw-araw (gising, kain, tulog)</li>
+                <li>Pare-pareho ang flow ng araw (predictable = mas kampante si baby)</li>
+                <li>Iwas sa sobrang ingay / stimulus (TV, maraming tao)</li>
+            </ul>
 
-<div lang="jp">
-<h2>ASD児の基本</h2>
-<p>詳しくはQAsへ</p>
-</div>
+            <h3>② Communication (pinaka-importante)</h3>
+            <ul>
+                <li>Short, simple, slow na salita</li>
+                <li>OK lang kahit walang eye contact (huwag pilitin)</li>
+                <li>Sumabay sa interest niya (hal. cars)</li>
+                <li>Sa crane behavior → lagyan ng words: “kuha”, “give”, “more”</li>
+            </ul>
 
-</div>
+            <h3>③ Paano palakihin ang speech</h3>
+            <ul>
+                <li>Gumawa ng situation na kailangan niya mag-request</li>
+                <li>Ulitin ang basic words: “more”, “give”, “wait”</li>
+                <li>Gamitin gestures + words</li>
+                <li>Kahit mali, i-accept at i-encourage</li>
+            </ul>
+
+            <h3>④ Food (very important)</h3>
+            <ul>
+                <li>Milk only = medyo risk (nutrition & development)</li>
+                <li>Huwag pilitin (lalo lang magre-refuse)</li>
+                <li>Step by step (puree → soft → solid)</li>
+                <li>Hanapin kung anong taste/texture ang OK sa kanya</li>
+                <li>Kahit konti, OK lang basta may success</li>
+                <li>👉 Kung hirap, consult doctor or nutritionist</li>
+            </ul>
+
+            <h3>⑤ YouTube control</h3>
+            <ul>
+                <li>YouTube (like cocomelon) → OK pero controlled</li>
+                <li>Gamitin lang pampakalma, hindi whole day</li>
+                <li>Max around 1 hour/day</li>
+                <li>I-connect sa real play (songs → actual play)</li>
+            </ul>
+
+            <h3>⑥ Play development</h3>
+            <ul>
+                <li>Sumali sa car play niya (huwag baguhin agad)</li>
+                <li>Lagyan ng words: “go”, “stop”</li>
+                <li>From solo play → parallel play → interaction</li>
+                <li>Huwag pilitin magbago ng play style</li>
+            </ul>
+
+            <h3>⑦ Social (tao sa paligid)</h3>
+            <ul>
+                <li>Start sa mga taong gusto niya</li>
+                <li>Huwag pilitin makipaglaro sa kuya</li>
+                <li>Turuan si kuya paano makipag-interact (gentle, simple)</li>
+                <li>Dahan-dahan dagdagan ang tao (small group muna)</li>
+            </ul>
+
+            <h3>⑧ Behavior handling</h3>
+            <ul>
+                <li>Huwag puro “no”, turuan kung ano ang gagawin</li>
+                <li>Kapag meltdown → bawasan ang stimulus</li>
+                <li>I-praise ang good behavior</li>
+                <li>Ayusin ang environment kaysa magalit</li>
+            </ul>
+
+            <h3>⑨ Therapy / support</h3>
+            <ul>
+                <li>Mag-start ng therapy early (very important)</li>
+                <li>Consistent approach sa bahay at therapy</li>
+                <li>Matuto din ang parents</li>
+            </ul>
+
+            <h3>⑩ Mindset ng nanay</h3>
+            <ul>
+                <li>Hindi kailangan perfect</li>
+                <li>Huwag ikumpara sa ibang bata</li>
+                <li>Focus sa progress, kahit maliit</li>
+                <li>Humingi ng tulong kung kailangan</li>
+            </ul>
+
+            <div class="important-note">
+                <h3>📢 Important note</h3>
+                <p><strong>Yung signs ngayon:</strong> Crane behavior, kaunting salita, fixation (YouTube, cars), food issue.</p>
+                <p>👉 Typical early ASD pattern, pero malaki pa chance mag-improve.</p>
+                <p><strong>Focus sa:</strong> Speech, Food, Social. Dito lalabas ang malaking growth from 3–5 years old.</p>
+            </div>
+        </div>
+
+        <div lang="jp">
+            <h2>ASDの幼児（2歳前後）：ママのためのガイド</h2>
+            <p>お子さんの発達をサポートするための基本ガイドです。詳細はQAsページも参照してください。</p>
+
+            <h3>① 毎日のルーティン / 発達の土台</h3>
+            <ul>
+                <li>毎日同じスケジュールを保つ（起きる、食べる、寝る時間を一定に）</li>
+                <li>一日の流れをパターン化する（予測できると、子供は安心します）</li>
+                <li>過度な騒音や刺激（テレビのつけっぱなし、人混み）を避ける</li>
+            </ul>
+
+            <h3>② コミュニケーション（最重要）</h3>
+            <ul>
+                <li>短く、シンプルに、ゆっくり話しかける</li>
+                <li>目が合わなくても大丈夫（無理に合わせようとしない）</li>
+                <li>子供が興味を持っているもの（例：車）に大人が合わせる</li>
+                <li>クレーン現象には言葉を添える（「取って」「ちょうだい」「もっと」など）</li>
+            </ul>
+
+            <h3>③ 言葉を伸ばす方法</h3>
+            <ul>
+                <li>子供が何かを「要求」しなければならない場面を作る</li>
+                <li>基本的な言葉を繰り返す：「もっと」「ちょうだい」「待って」</li>
+                <li>ジェスチャーと言葉をセットで使う</li>
+                <li>言い間違いがあっても、まずは受け入れ、褒めてあげる</li>
+            </ul>
+
+            <h3>④ 食事について（非常に重要）</h3>
+            <ul>
+                <li>ミルクのみは栄養・発達面でリスクがあります</li>
+                <li>無理強いはしない（余計に拒絶が強くなるため）</li>
+                <li>少しずつステップアップ（ペースト → 柔らかめ → 固形）</li>
+                <li>好きな味や食感（こだわり）を見つけてあげる</li>
+                <li>一口でも食べられたら「成功体験」として喜ぶ</li>
+                <li>👉 難しい場合は、医師や栄養士に相談しましょう</li>
+            </ul>
+
+            <h3>⑤ YouTubeとの付き合い方</h3>
+            <ul>
+                <li>YouTube（Cocomelonなど）は見せても良いが、コントロールが必須</li>
+                <li>一日中見せるのではなく、落ち着かせるための道具として使う</li>
+                <li>目安は1日最大1時間程度</li>
+                <li>動画の内容を現実の遊びに繋げる（歌に出てくる遊びを実際にする）</li>
+            </ul>
+
+            <h3>⑥ 遊びの発達</h3>
+            <ul>
+                <li>子供の遊び（例：車を並べる）に加わる（無理に遊び方を変えない）</li>
+                <li>「ゴー」「ストップ」など言葉で実況する</li>
+                <li>一人遊び → 並行遊び（横で大人が遊ぶ） → 関わり合いへ</li>
+                <li>独特な遊び方を無理に矯正しない</li>
+            </ul>
+
+            <h3>⑦ 社会性（周りの人との関わり）</h3>
+            <ul>
+                <li>まずは子供が好きな人（懐いている人）から始める</li>
+                <li>お兄ちゃんと無理に遊ばせようとしない</li>
+                <li>お兄ちゃんに接し方を教える（優しく、シンプルに）</li>
+                <li>少しずつ会う人を増やす（まずは少人数のグループから）</li>
+            </ul>
+
+            <h3>⑧ 行動への対応</h3>
+            <ul>
+                <li>「ダメ！」ばかりでなく、「どうすればいいか」を教える</li>
+                <li>パニック（メルトダウン）の時は、刺激を減らして落ち着かせる</li>
+                <li>良い行動をしたらすぐに具体的に褒める</li>
+                <li>怒るよりも、子供が過ごしやすい環境を整える</li>
+            </ul>
+
+            <h3>⑨ 療育・サポート</h3>
+            <ul>
+                <li>早期療育の開始（非常に重要です）</li>
+                <li>家庭での接し方と療育の方針を一貫させる</li>
+                <li>親自身も学び、サポートを受ける</li>
+            </ul>
+
+            <h3>⑩ ママのマインドセット</h3>
+            <ul>
+                <li>完璧である必要はありません</li>
+                <li>他の子と比較しないでください</li>
+                <li>どんなに小さくても、その子の「前進」に注目する</li>
+                <li>一人で抱え込まず、助けを求める</li>
+            </ul>
+
+            <div class="important-note">
+                <h3>📢 重要なポイント</h3>
+                <p><strong>現在のサイン：</strong> クレーン現象、言葉が少ない、強いこだわり（YouTube、車）、偏食。</p>
+                <p>👉 これらはASDの初期の典型的なパターンですが、今後の関わりで大きく改善する可能性があります。</p>
+                <p><strong>注力すべき点：</strong> 言葉、食事、社会性。ここを意識することで、3歳から5歳にかけて大きな成長が見込めます。</p>
+            </div>
+        </div>
+    </div>
 </main>
 
 <script>
 function switchLang(lang){
-document.body.className='lang-'+lang;
+    document.body.className = 'lang-' + lang;
 }
 </script>
 
