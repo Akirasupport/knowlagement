@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parenting Notebook</title>
+    <title>Parenting Notebook - Special Edition</title>
     <style>
         :root {
-            --primary-color: #5d5c5c;
-            --accent-color: #ff9a9e;
-            --bg-color: #ffffff;
-            --text-dark: #333;
+            --primary-color: #4a4a4a;
+            --accent-color: #ff8c94;
+            --yt-color: #ff0000;
+            --bg-color: #fdfcfc;
+            --card-shadow: 0 15px 35px rgba(0,0,0,0.07);
         }
 
         html { scroll-behavior: smooth; }
         body {
             margin: 0;
             font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-            color: var(--text-dark);
-            line-height: 1.7;
-            background-color: #fdfbfb;
+            color: #333;
+            line-height: 1.8;
+            background-color: var(--bg-color);
         }
 
         /* --- Header --- */
@@ -26,120 +27,129 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
         }
         .header-inner {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 10px 20px;
+            padding: 12px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
+        nav { display: flex; gap: 15px; }
         nav a {
             text-decoration: none;
-            color: var(--text-dark);
-            margin: 0 15px;
+            color: var(--primary-color);
             font-weight: bold;
-            font-size: 0.9rem;
-            cursor: pointer;
+            font-size: 0.85rem;
+            transition: 0.3s;
         }
+        nav a:hover { color: var(--accent-color); }
+
         .lang-switcher button {
-            background: #eee;
+            background: #f0f0f0;
             border: none;
-            padding: 5px 10px;
-            border-radius: 4px;
+            padding: 6px 14px;
+            border-radius: 20px;
             cursor: pointer;
-            font-size: 0.8rem;
-            margin-left: 5px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            transition: 0.3s;
         }
         .lang-switcher button.active {
             background: var(--accent-color);
             color: white;
         }
 
-        /* --- Hero Section --- */
+        /* --- Hero --- */
         .hero {
-            height: 60vh;
+            height: 65vh;
             background: 
-                linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)),
-                url('https://images.unsplash.com/photo-1476703728296-64f21809678b?q=80&w=2070&auto=format&fit=crop') no-repeat center/cover;
-            /* ↑ここのURLを実際のお子様の写真に変更可能です */
+                linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)),
+                url('https://images.unsplash.com/photo-1537655780520-1e392ead81f2?q=80&w=2070&auto=format&fit=crop') no-repeat center/cover;
             display: flex;
             justify-content: center;
             align-items: center;
             margin-top: 50px;
         }
-        .hero h1 {
-            font-size: 3rem;
-            color: rgba(0,0,0,0.7);
-            text-shadow: 2px 2px 4px rgba(255,255,255,0.8);
-            letter-spacing: 2px;
+        .hero-content {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 30px 50px;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(4px);
         }
+        .hero h1 { font-size: clamp(1.8rem, 6vw, 3.5rem); margin: 0; color: #444; }
+        .hero p { margin-top: 10px; font-weight: bold; color: #666; }
 
-        /* --- Main Content --- */
-        main {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
+        /* --- Content Layout --- */
+        main { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        section { margin-bottom: 80px; scroll-margin-top: 100px; }
         .card {
             background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            margin-bottom: 40px;
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: var(--card-shadow);
         }
         h2 {
-            border-left: 5px solid var(--accent-color);
-            padding-left: 15px;
+            font-size: 1.6rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
             margin-bottom: 30px;
-        }
-        .point-item {
-            margin-bottom: 25px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 15px;
-        }
-        .point-title {
-            font-weight: bold;
-            font-size: 1.1rem;
-            display: block;
-            margin-bottom: 8px;
-            color: #d16b6f;
-        }
-        .point-content {
-            white-space: pre-wrap;
-            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        /* --- Hidden elements --- */
+        /* --- Detail Styling --- */
+        .point-box {
+            background: #fffafa;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 5px solid var(--accent-color);
+        }
+        .point-title { font-weight: bold; font-size: 1.2rem; color: #d16b6f; display: block; margin-bottom: 10px; }
+        .yt-special-box {
+            background: #fef2f2;
+            border: 2px dashed #fca5a5;
+            padding: 30px;
+            border-radius: 20px;
+        }
+        .yt-tag {
+            background: var(--yt-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            vertical-align: middle;
+        }
+
+        /* --- Language Control --- */
         [lang="tl"], [lang="jp"] { display: none; }
         body.lang-tl [lang="tl"] { display: block; }
         body.lang-jp [lang="jp"] { display: block; }
 
-        /* --- Footer/Top Button --- */
+        /* --- Footer & Utils --- */
         #back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: var(--accent-color);
-            color: white;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-            font-size: 0.8rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            position: fixed; bottom: 30px; right: 30px;
+            background: var(--accent-color); color: white;
+            width: 55px; height: 55px; border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            text-decoration: none; font-weight: bold; box-shadow: 0 5px 20px rgba(255,140,148,0.5);
         }
+        footer { text-align: center; padding: 50px; color: #aaa; font-size: 0.85rem; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 10px; }
 
         @media (max-width: 600px) {
-            .hero h1 { font-size: 2rem; }
+            .card { padding: 25px 15px; }
+            .hero-content { padding: 20px; }
         }
     </style>
 </head>
@@ -149,7 +159,8 @@
         <div class="header-inner">
             <nav>
                 <a href="#top">TOP</a>
-                <a href="#points">ポイント</a>
+                <a href="#points">POINTS</a>
+                <a href="#youtube">YOUTUBE</a>
             </nav>
             <div class="lang-switcher">
                 <button id="btn-tl" class="active" onclick="switchLang('tl')">TL</button>
@@ -159,171 +170,137 @@
     </header>
 
     <section class="hero">
-        <h1>Parenting Notebook</h1>
+        <div class="hero-content">
+            <h1>Parenting Notebook</h1>
+            <p>Guide for 5y & 2y Active Boys</p>
+        </div>
     </section>
 
-    <main id="points">
-        <div class="card">
-            <div lang="tl">
-                <h2>■ ASD toddler (malapit 2 years old): Gabay para sa Nanay</h2>
-                
-                <div class="point-item">
-                    <span class="point-title">① Daily routine / base ng development</span>
-                    <div class="point-content">Same schedule araw-araw (gising, kain, tulog)
-Pare-pareho ang flow ng araw (predictable = mas kampante si baby)
-Iwas sa sobrang ingay / stimulus (TV, maraming tao)</div>
+    <main>
+        <section id="points">
+            <div class="card">
+                <div lang="tl">
+                    <h2>■ ASD Toddler Gabay para sa Nanay</h2>
+                    <div class="point-box">
+                        <span class="point-title">① Structure & Routine</span>
+                        <ul>
+                            <li><strong>Same schedule:</strong> Gising, kain, tulog. Ito ang nagbibigay ng "security" kay baby.</li>
+                            <li><strong>Predictability:</strong> Kapag alam niya ang susunod na mangyayari, mas konti ang tantrums.</li>
+                        </ul>
+                    </div>
+                    <div class="point-box">
+                        <span class="point-title">② Communication Hacks</span>
+                        <ul>
+                            <li><strong>One-word/Short phrase:</strong> Imbes na "Anak, kunin mo yung bola," sabihin lang "Bola, kuha."</li>
+                            <li><strong>Crane Behavior:</strong> Huwag lang ibigay. Sabihin, "Gusto mo water? Sabihin mo 'Water'."</li>
+                        </ul>
+                    </div>
                 </div>
-
-                <div class="point-item">
-                    <span class="point-title">② Communication (pinaka-importante)</span>
-                    <div class="point-content">Short, simple, slow na salita
-OK lang kahit walang eye contact (huwag pilitin)
-Sumabay sa interest niya (hal. cars)
-Sa crane behavior → lagyan ng words: “kuha”, “give”, “more”</div>
-                </div>
-
-                <div class="point-item">
-                    <span class="point-title">③ Paano palakihin ang speech</span>
-                    <div class="point-content">Gumawa ng situation na kailangan niya mag-request
-Ulitin ang basic words: “more”, “give”, “wait”
-Gamitin gestures + words
-Kahit mali, i-accept at i-encourage</div>
-                </div>
-
-                <div class="point-item">
-                    <span class="point-title">④ Food (very important)</span>
-                    <div class="point-content">Milk only = medyo risk (nutrition & development)
-Huwag pilitin (lalo lang magre-refuse)
-Step by step (puree → soft → solid)
-Hanapin kung anong taste/texture ang OK sa kanya
-👉 Kung hirap, consult doctor or nutritionist</div>
-                </div>
-
-                <div class="point-item">
-                    <span class="point-title">⑤ YouTube control</span>
-                    <div class="point-content">YouTube (like cocomelon) → OK pero controlled
-Max around 1 hour/day. I-connect sa real play (songs → actual play)</div>
-                </div>
-
-                <div class="point-item">
-                    <span class="point-title">⑥ Play development</span>
-                    <div class="point-content">Sumali sa car play niya. Lagyan ng words: “go”, “stop”
-From solo play → parallel play → interaction</div>
-                </div>
-
-                <div class="point-item">
-                    <span class="point-title">⑦ Social (tao sa paligid)</span>
-                    <div class="point-content">Start sa mga taong gusto niya. Huwag pilitin makipaglaro sa kuya
-Turuan si kuya paano makipag-interact (gentle, simple)</div>
-                </div>
-
-                <div class="point-item">
-                    <span class="point-title">⑧ Behavior handling</span>
-                    <div class="point-content">Huwag puro “no”, turuan kung ano ang gagawin
-Kapag meltdown → bawasan ang stimulus. I-praise ang good behavior</div>
-                </div>
-
-                <div class="point-item">
-                    <span class="point-title">⑨ Therapy / support</span>
-                    <div class="point-content">Mag-start ng therapy early (very important)
-Consistent approach sa bahay at therapy</div>
-                </div>
-
-                <div class="point-item">
-                    <span class="point-title">⑩ Mindset ng nanay</span>
-                    <div class="point-content">Hindi kailangan perfect. Focus sa progress, kahit maliit.
-Humingi ng tulong kung kailangan.</div>
-                </div>
-
-                <hr>
-                <div class="point-content" style="background:#fff5f5; padding:15px; border-radius:10px;">
-<strong>■ Important note</strong>
-Typical early ASD pattern (Crane, YouTube fixation, Food issue), pero malaki pa chance mag-improve. Focus sa Speech, Food, at Social. Dito lalabas ang malaking growth from 3–5 years old.
+                <div lang="jp">
+                    <h2>■ ASD児 育児の基本ポイント</h2>
+                    <div class="point-box">
+                        <span class="point-title">① 生活リズムと構造化</span>
+                        <ul>
+                            <li><strong>同じスケジュール:</strong> 起床、食事、睡眠を固定することで、子供に安心感を与えます。</li>
+                            <li><strong>予測可能性:</strong> 「次は何をするか」がわかると、パニックや拒絶が減ります。</li>
+                        </ul>
+                    </div>
+                    <div class="point-box">
+                        <span class="point-title">② 伝わるコミュニケーション</span>
+                        <ul>
+                            <li><strong>短く、はっきりと:</strong> 「おもちゃを片付けて」より「おもちゃ、箱（ポイ）」と短く伝えます。</li>
+                            <li><strong>クレーン現象への対応:</strong> 無言で応じず、「お水、ちょうだい」と言葉をモデル提示します。</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div lang="jp">
-                <h2>■ ASD 幼児（2歳前後）：ママのためのガイド</h2>
-                
-                <div class="point-item">
-                    <span class="point-title">① ルーティン / 発達の土台</span>
-                    <div class="point-content">毎日同じスケジュール（起床、食事、就寝）
-一日の流れを固定する（予測可能＝安心感）
-過度な刺激を避ける（TV、人混み）</div>
+        <section id="youtube">
+            <div class="card yt-special-box">
+                <div lang="tl">
+                    <h2><span class="yt-tag">SPECIAL</span> YouTube & Cocomelon Strategy</h2>
+                    <p>Masyadong "addictive" ang Cocomelon para sa ASD kids dahil sa fast transitions at repetitive music. Ito ang deep dive strategy:</p>
+                    
+                    <span class="point-title">1. Bakit ito "Dangerous" kapag sobra?</span>
+                    <p>Ang ASD brain ay mahilig sa patterns. Ang YouTube ay "perfect pattern" pero ito ay <strong>Passive Learning</strong>. Nawawala ang chance para sa <strong>Active Interaction</strong> sa totoong tao.</p>
+
+                    <span class="point-title">2. Step-by-Step "Detox" (Hindi biglaan)</span>
+                    <ul>
+                        <li><strong>Week 1:</strong> Bawasan ng 1 hour ang total watching time.</li>
+                        <li><strong>Visual Timer:</strong> Gumamit ng timer (parang sandglass o clock) para makita niya kung kailan matatapos. "Kapag nag-beep, Finish na."</li>
+                    </ul>
+
+                    <span class="point-title">3. From Screen to Real Play</span>
+                    <p>Kung mahilig siya sa 'Wheels on the Bus' sa YouTube:</p>
+                    <ul>
+                        <li>I-off ang TV, kunin ang toy car.</li>
+                        <li>Kantahin ang song habang pinapaikot ang gulong ng toy car <strong>kasama siya</strong>.</li>
+                        <li>Dito nagiging "Social" ang learning.</li>
+                    </ul>
+
+                    <span class="point-title">4. Rule of Threes (療育 Style)</span>
+                    <ul>
+                        <li><strong>Watch:</strong> 15 mins.</li>
+                        <li><strong>Talk/Play:</strong> 15 mins (Tungkol sa pinanood).</li>
+                        <li><strong>Move:</strong> 15 mins (Talon, takbo, swing).</li>
+                    </ul>
                 </div>
 
-                <div class="point-item">
-                    <span class="point-title">② コミュニケーション（最重要）</span>
-                    <div class="point-content">短く、シンプルに、ゆっくり話す
-目を合わせなくてもOK（無理強いしない）
-本人の興味（車など）に合わせる
-クレーン現象には言葉を添える：「取って」「ちょうだい」「もっと」</div>
-                </div>
+                <div lang="jp">
+                    <h2><span class="yt-tag">特別編</span> YouTube・ここメロンとの付き合い方</h2>
+                    <p>ここメロンのような番組は、色彩とリズムが完璧すぎてASD児には「強すぎる報酬」になります。以下の戦略でコントロールしましょう：</p>
 
-                <div class="point-item">
-                    <span class="point-title">③ 発語を促すには</span>
-                    <div class="point-content">リクエストが必要な状況を作る
-基本の言葉を繰り返す：「もっと」「ちょうだい」「待って」
-ジェスチャーと言葉をセットで使う
-言い間違いも受け入れ、褒める</div>
-                </div>
+                    <span class="point-title">1. なぜ「垂れ流し」が良くないのか</span>
+                    <p>動画は一方通行の刺激です。これに慣れすぎると、反応の遅い「人間とのコミュニケーション」を退屈に感じてしまい、視線が合いにくくなったり、言葉の遅れに繋がります。</p>
 
-                <div class="point-item">
-                    <span class="point-title">④ 食事（非常に重要）</span>
-                    <div class="point-content">牛乳のみは栄養・発達上のリスク
-無理強いしない（余計に拒絶するため）
-スモールステップ（ピューレ→軟らかい→固形）
-好みの味や食感を探す
-👉 困難な場合は医師や栄養士に相談</div>
-                </div>
+                    <span class="point-title">2. 「デジタル・デトックス」の進め方</span>
+                    <ul>
+                        <li><strong>視覚的タイマーの活用:</strong> 「あとちょっと」は伝わりません。タイムタイマーなどを使って「赤がなくなったら終わり」と視覚的に示します。</li>
+                        <li><strong>予告の徹底:</strong> 終わる5分前、1分前に声をかけ、心の準備をさせます。</li>
+                    </ul>
 
-                <div class="point-item">
-                    <span class="point-title">⑤ YouTubeのコントロール</span>
-                    <div class="point-content">YouTube（Cocomelon等）は時間を決めて
-1日最大1時間程度。リアルの遊びに繋げる（歌→実際の動作）</div>
-                </div>
+                    <span class="point-title">3. 動画を「教材」に変える魔法</span>
+                    <p>ただ見せるのではなく、親が介入します：</p>
+                    <ul>
+                        <li>一時停止ボタンを押し、「次は何かな？」と予測させる。</li>
+                        <li>動画内のダンスを現実の世界で一緒に再現する。</li>
+                        <li>動画の「外」にある実物（ミニカーなど）へ誘導する。</li>
+                    </ul>
 
-                <div class="point-item">
-                    <span class="point-title">⑥ 遊びの発達</span>
-                    <div class="point-content">車遊びなどに参加する（すぐに変えようとしない）
-言葉を添える：「ゴー」「ストップ」
-一人遊び→並行遊び→相互のやり取りへ</div>
-                </div>
-
-                <div class="point-item">
-                    <span class="point-title">⑦ 社会性（周囲の人）</span>
-                    <div class="point-content">好きな人から始める。お兄ちゃんと無理に遊ばせない
-お兄ちゃんに接し方を教える（優しく、シンプルに）</div>
-                </div>
-
-                <div class="point-item">
-                    <span class="point-title">⑧ 行動への対応</span>
-                    <div class="point-content">「ダメ」だけでなく「何をするか」を教える
-パニック時は刺激を減らす。良い行動を褒める</div>
-                </div>
-
-                <div class="point-item">
-                    <span class="point-title">⑨ 療育 / サポート</span>
-                    <div class="point-content">早期療育の開始（非常に重要）
-家庭と療育先でアプローチを統一する</div>
-                </div>
-
-                <div class="point-item">
-                    <span class="point-title">⑩ ママのマインドセット</span>
-                    <div class="point-content">完璧でなくていい。他人と比較しない。
-小さな成長に目を向ける。助けを求める。</div>
-                </div>
-
-                <hr>
-                <div class="point-content" style="background:#f0f7ff; padding:15px; border-radius:10px;">
-<strong>■ 重要なノート</strong>
-クレーン現象や執着、偏食は典型的な初期サインですが、改善の可能性は十分あります。言葉・食事・社会性にフォーカスしましょう。3歳から5歳にかけて大きな成長が見られます。
+                    <span class="point-title">4. 療育的な代替案</span>
+                    <ul>
+                        <li><strong>感覚遊びの導入:</strong> YouTubeに代わる強い刺激として、水遊び、粘土、バランスボールなど、脳が「楽しい！」と感じる全身遊びを増やします。</li>
+                    </ul>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <section id="qa">
+            <div class="card">
+                <div lang="tl">
+                    <h2>■ Questions & Answers</h2>
+                    <div class="point-box">
+                        <p><strong>Q: Pwede ba talagang zero YouTube?</strong><br>
+                        A: Mahirap ito sa modernong buhay. Ang goal ay hindi 0, kundi "Controlled Use." Gamitin ito bilang tool, hindi babysitter.</p>
+                    </div>
+                </div>
+                <div lang="jp">
+                    <h2>■ よくある質問</h2>
+                    <div class="point-box">
+                        <p><strong>Q: YouTubeを完全に禁止すべき？</strong><br>
+                        A: 現代の育児でゼロは現実的ではありません。大切なのは「禁止」ではなく「コントロール」です。親が主導権を握るツールとして使いましょう。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <a href="#top" id="back-to-top">TOP</a>
+
+    <footer>
+        &copy; 2026 Parenting Notebook | For the Bright Future of Our Boys
+    </footer>
 
     <script>
         function switchLang(lang) {
