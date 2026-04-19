@@ -49,7 +49,7 @@ body.lang-jp [lang="jp"] { display:block; }
 <nav>
 <a href="../index.html">TOP</a>
 <a href="#">ASDとは</a>
-<a href="QA1.html">QAs</a>
+<a href="../QAs/QA1.html">QAs</a>
 <a href="../Posting/index.html">Posting</a>
 </nav>
 </header>
@@ -59,70 +59,12 @@ body.lang-jp [lang="jp"] { display:block; }
 
 <div lang="tl">
 <h2>Q1: YouTube & Cocomelon OK ba?</h2>
-
-<p><strong>A1:</strong></p>
-
-<p>Masyadong addictive ang Cocomelon dahil sa fast visuals at repetition.</p>
-
-<h3>1. Problema</h3>
-<ul>
-<li>Passive learning</li>
-<li>Nawawala ang real interaction</li>
-</ul>
-
-<h3>2. Detox Strategy</h3>
-<ul>
-<li>Bawasan gradually</li>
-<li>Use visual timer</li>
-</ul>
-
-<h3>3. Convert to real play</h3>
-<ul>
-<li>Use toys</li>
-<li>Sing with child</li>
-</ul>
-
-<h3>4. Rule of 3</h3>
-<ul>
-<li>Watch 15m</li>
-<li>Play 15m</li>
-<li>Move 15m</li>
-</ul>
-
+<p><strong>A1:</strong> Controlled use only.</p>
 </div>
 
 <div lang="jp">
 <h2>Q1: YouTubeは使っていい？</h2>
-
-<p><strong>A1:</strong></p>
-
-<p>刺激が強く依存しやすいです。</p>
-
-<h3>1. 問題</h3>
-<ul>
-<li>受動的学習</li>
-<li>対人関係が減る</li>
-</ul>
-
-<h3>2. 対策</h3>
-<ul>
-<li>徐々に減らす</li>
-<li>タイマー使用</li>
-</ul>
-
-<h3>3. 現実遊びへ</h3>
-<ul>
-<li>おもちゃ活用</li>
-<li>一緒に遊ぶ</li>
-</ul>
-
-<h3>4. 15分ルール</h3>
-<ul>
-<li>視聴</li>
-<li>遊び</li>
-<li>運動</li>
-</ul>
-
+<p><strong>A1:</strong> コントロールして使う。</p>
 </div>
 
 </div>
