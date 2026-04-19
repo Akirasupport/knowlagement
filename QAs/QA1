@@ -1,1 +1,138 @@
-1
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QA1</title>
+
+<style>
+body {
+    font-family: sans-serif;
+    margin:0;
+    background:#fdfcfc;
+}
+
+/* header */
+header {
+    background:#333;
+    padding:10px;
+}
+nav a {
+    color:white;
+    margin-right:15px;
+    text-decoration:none;
+}
+
+/* content */
+.container {
+    max-width:900px;
+    margin:30px auto;
+    padding:20px;
+}
+.card {
+    background:white;
+    padding:30px;
+    border-radius:15px;
+}
+
+/* lang */
+[lang="tl"], [lang="jp"] { display:none; }
+body.lang-tl [lang="tl"] { display:block; }
+body.lang-jp [lang="jp"] { display:block; }
+
+</style>
+</head>
+
+<body class="lang-tl">
+
+<header>
+<nav>
+<a href="../index.html">TOP</a>
+<a href="#">ASDとは</a>
+<a href="QA1.html">QAs</a>
+<a href="../Posting/index.html">Posting</a>
+</nav>
+</header>
+
+<div class="container">
+<div class="card">
+
+<div lang="tl">
+<h2>Q1: YouTube & Cocomelon OK ba?</h2>
+
+<p><strong>A1:</strong></p>
+
+<p>Masyadong addictive ang Cocomelon dahil sa fast visuals at repetition.</p>
+
+<h3>1. Problema</h3>
+<ul>
+<li>Passive learning</li>
+<li>Nawawala ang real interaction</li>
+</ul>
+
+<h3>2. Detox Strategy</h3>
+<ul>
+<li>Bawasan gradually</li>
+<li>Use visual timer</li>
+</ul>
+
+<h3>3. Convert to real play</h3>
+<ul>
+<li>Use toys</li>
+<li>Sing with child</li>
+</ul>
+
+<h3>4. Rule of 3</h3>
+<ul>
+<li>Watch 15m</li>
+<li>Play 15m</li>
+<li>Move 15m</li>
+</ul>
+
+</div>
+
+<div lang="jp">
+<h2>Q1: YouTubeは使っていい？</h2>
+
+<p><strong>A1:</strong></p>
+
+<p>刺激が強く依存しやすいです。</p>
+
+<h3>1. 問題</h3>
+<ul>
+<li>受動的学習</li>
+<li>対人関係が減る</li>
+</ul>
+
+<h3>2. 対策</h3>
+<ul>
+<li>徐々に減らす</li>
+<li>タイマー使用</li>
+</ul>
+
+<h3>3. 現実遊びへ</h3>
+<ul>
+<li>おもちゃ活用</li>
+<li>一緒に遊ぶ</li>
+</ul>
+
+<h3>4. 15分ルール</h3>
+<ul>
+<li>視聴</li>
+<li>遊び</li>
+<li>運動</li>
+</ul>
+
+</div>
+
+</div>
+</div>
+
+<script>
+function switchLang(lang){
+document.body.className='lang-'+lang;
+}
+</script>
+
+</body>
+</html>
