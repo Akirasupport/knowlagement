@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QA1</title>
+
+<style>
+body {
+    font-family: sans-serif;
+    margin:0;
+    background:#fdfcfc;
+}
+
+/* header */
+header {
+    background:#333;
+    padding:10px;
+}
+nav a {
+    color:white;
+    margin-right:15px;
+    text-decoration:none;
+}
+
+/* content */
+.container {
+    max-width:900px;
+    margin:30px auto;
+    padding:20px;
+}
+.card {
+    background:white;
+    padding:30px;
+    border-radius:15px;
+}
+
+/* lang */
+[lang="tl"], [lang="jp"] { display:none; }
+body.lang-tl [lang="tl"] { display:block; }
+body.lang-jp [lang="jp"] { display:block; }
+
+</style>
+</head>
+
+<body class="lang-tl">
+
+<header>
+<nav>
+<a href="../index.html">TOP</a>
+<a href="#">ASDとは</a>
+<a href="../QAs/QA1.html">QAs</a>
+<a href="../Posting/index.html">Posting</a>
+</nav>
+</header>
+
+<div class="container">
+<div class="card">
+
+<div lang="tl">
+<h2>Q1: YouTube & Cocomelon OK ba?</h2>
+<p><strong>A1:</strong> Controlled use only.</p>
+</div>
+
+<div lang="jp">
+<h2>Q1: YouTubeは使っていい？</h2>
+<p><strong>A1:</strong> コントロールして使う。</p>
+</div>
+
+</div>
+</div>
+
+<script>
+function switchLang(lang){
+document.body.className='lang-'+lang;
+}
+</script>
+
+</body>
+</html>
