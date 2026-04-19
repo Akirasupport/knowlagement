@@ -3,68 +3,192 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>QA1</title>
+<title>QA1 - ASD as a Handicap?</title>
 
 <style>
+:root {
+    --primary-color: #4a4a4a;
+    --accent-color: #ff8c94;
+    --bg-color: #fdfcfc;
+}
+
 body {
-    font-family: sans-serif;
-    margin:0;
-    background:#fdfcfc;
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    margin: 0;
+    background: var(--bg-color);
+    color: #333;
+    line-height: 1.6;
 }
 
 /* header */
 header {
-    background:#333;
-    padding:10px;
+    background: #333;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 nav a {
-    color:white;
-    margin-right:15px;
-    text-decoration:none;
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+.lang-buttons button {
+    background: #555;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+.lang-buttons button:hover {
+    background: var(--accent-color);
 }
 
 /* content */
 .container {
-    max-width:900px;
-    margin:30px auto;
-    padding:20px;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
 }
 .card {
-    background:white;
-    padding:30px;
-    border-radius:15px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-/* lang */
+h2 {
+    color: var(--accent-color);
+    font-size: 1.4rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+h3 {
+    background: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    margin-top: 25px;
+}
+.highlight {
+    color: #d9534f;
+    font-weight: bold;
+}
+ul {
+    padding-left: 20px;
+}
+li {
+    margin-bottom: 10px;
+}
+.answer-box {
+    background: #fffafa;
+    border-left: 5px solid var(--accent-color);
+    padding: 15px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* lang logic */
 [lang="tl"], [lang="jp"] { display:none; }
 body.lang-tl [lang="tl"] { display:block; }
 body.lang-jp [lang="jp"] { display:block; }
-
 </style>
 </head>
 
-<body class="lang-tl">
-
-<header>
+<body class="lang-jp"> <header>
 <nav>
 <a href="../index.html">TOP</a>
-<a href="#">ASDとは</a>
+<a href="#">ASD info</a>
 <a href="../QAs/QA1.html">QAs</a>
 <a href="../Posting/index.html">Posting</a>
 </nav>
+<div class="lang-buttons">
+<button onclick="switchLang('tl')">Tagalog</button>
+<button onclick="switchLang('jp')">日本語</button>
+</div>
 </header>
 
 <div class="container">
 <div class="card">
 
-<div lang="tl">
-<h2>Q1: YouTube & Cocomelon OK ba?</h2>
-<p><strong>A1:</strong> Controlled use only.</p>
+<div lang="jp">
+    <h2>Q1: これからの世でASDで生きていくことは、それ程ハンディキャップと思いませんがどうですか？</h2>
+    
+    <div class="answer-box">
+        率直に言うと、「半分は正しいけれど、半分は甘く見ない方がいい」というのが現実です。
+    </div>
+
+    <h3>■ ASDは「ハンディではない面」も確実にある</h3>
+    <p>これからの社会では、むしろ強みになる場面が増えています。</p>
+    <ul>
+        <li><strong>① IT・AI時代との相性</strong><br>
+            一人で集中する力、ルールやパターンを見つける力、繰り返し作業への強さ。<br>
+            👉 プログラミング、データ分析、デザインなどは非常に相性がいいです。</li>
+        <li><strong>② 多様性の理解が進んでいる</strong><br>
+            ASDを「病気」ではなく「特性」と捉える流れが広まり、学校や企業の配慮も増えています。<br>
+            👉 昔よりは確実に生きやすい世の中になっています。</li>
+        <li><strong>③ 「人と同じでなくていい」時代</strong><br>
+            フリーランス、リモートワーク、AIの活用など、対人コミュニケーションが苦手でも能力を発揮できる道がたくさんあります。</li>
+    </ul>
+
+    <h3>■ ただし現実的なハンディも残る</h3>
+    <p>ここを軽く見ると、後で本人が苦労することになります。</p>
+    <ul>
+        <li><strong>① 対人コミュニケーションの壁</strong><br>
+            空気を読む、曖昧な指示の理解、感情の細かなやり取り。これらは依然として社会で求められます。</li>
+        <li><strong>② 感覚・こだわりの問題</strong><br>
+            音・光・匂いへの過敏さや、急な変化への弱さ。環境によっては、本人にとって大きなストレスになります。</li>
+        <li><strong>③ 幼少期の土台で差が大きく出る（最重要）</strong><br>
+            早期療育や周囲の関わり次第で：
+            <ul>
+                <li>ほぼ問題なく社会適応できる子</li>
+                <li>手厚い支援が必要なままの子</li>
+            </ul>
+            に分かれるのが現実です。</li>
+    </ul>
 </div>
 
-<div lang="jp">
-<h2>Q1: YouTubeは使っていい？</h2>
-<p><strong>A1:</strong> コントロールして使う。</p>
+<div lang="tl">
+    <h2>Q1: Sa tingin ko, hindi na masyadong handicap ang ASD sa panahon ngayon. Ano ang masasabi niyo?</h2>
+    
+    <div class="answer-box">
+        Sa totoo lang, "kalahating tama, pero ang kalahati ay hindi dapat maliitin" ang realidad.
+    </div>
+
+    <h3>■ May mga aspeto ng ASD na "hindi handicap"</h3>
+    <p>Sa modernong lipunan, dumarami ang pagkakataon kung saan nagiging "strength" ang ASD.</p>
+    <ul>
+        <li><strong>① Bagay sa IT at AI Era</strong><br>
+            Kakayahang mag-focus nang mag-isa, paghanap ng patterns, at tiyaga sa paulit-ulit na gawain.<br>
+            👉 Swak ito sa programming, data analysis, at design.</li>
+        <li><strong>② Mas malawak na pag-unawa sa Diversidad</strong><br>
+            Ang ASD ay tinitingnan na bilang "katangian" (trait) sa halip na "sakit". Dumadami na ang suporta sa paaralan at trabaho.<br>
+            👉 Mas madali nang mabuhay ngayon kumpara noon.</li>
+        <li><strong>③ Panahon ng "Hindi kailangang pare-pareho"</strong><br>
+            Freelance, remote work, at paggamit ng AI. May mga paraan para magtagumpay kahit hindi mahusay sa pakikihalubilo.</li>
+    </ul>
+
+    <h3>■ Ngunit may mga "handicap" na nananatili</h3>
+    <p>Kung babalewalain ito, maaaring mahirapan ang bata sa paglaki.</p>
+    <ul>
+        <li><strong>① Hamon sa Komunikasyon</strong><br>
+            Pagbasa ng sitwasyon (reading the air), pag-intindi sa malabong instructions, at palitan ng emosyon. Kailangan pa rin ito sa lipunan.</li>
+        <li><strong>② Sensory at Fixation Issues</strong><br>
+            Sensitibo sa ingay, ilaw, o amoy. Hirap sa biglaang pagbabago. Maaari itong maging sanhi ng matinding stress depende sa environment.</li>
+        <li><strong>③ Malaking basehan ang pundasyon ng pagkabata (Pinaka-importante)</strong><br>
+            Depende sa early intervention at paggabay:
+            <ul>
+                <li>Mga batang kayang makibagay sa lipunan nang maayos.</li>
+                <li>Mga batang mangangailangan pa rin ng matinding suporta.</li>
+            </ul>
+        </li>
+    </ul>
 </div>
 
 </div>
@@ -72,7 +196,7 @@ body.lang-jp [lang="jp"] { display:block; }
 
 <script>
 function switchLang(lang){
-document.body.className='lang-'+lang;
+    document.body.className = 'lang-' + lang;
 }
 </script>
 
