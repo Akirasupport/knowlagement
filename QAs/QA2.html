@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QA2 - YouTube vs Real Life Communication</title>
+
+<style>
+:root {
+    --primary-color: #4a4a4a;
+    --accent-color: #ff8c94;
+    --bg-color: #fdfcfc;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    margin: 0;
+    background: var(--bg-color);
+    color: #333;
+    line-height: 1.6;
+}
+
+/* header */
+header {
+    background: #333;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+nav a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+.lang-buttons button {
+    background: #555;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+.lang-buttons button:hover {
+    background: var(--accent-color);
+}
+
+/* content */
+.container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+}
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
+}
+
+h2 {
+    color: var(--accent-color);
+    font-size: 1.3rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+h3 {
+    background: #f8f8f8;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    margin-top: 25px;
+    color: #444;
+}
+ul {
+    padding-left: 20px;
+}
+li {
+    margin-bottom: 10px;
+}
+.answer-box {
+    background: #fffafa;
+    border-left: 5px solid var(--accent-color);
+    padding: 15px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+.positive-box {
+    background: #f0f9ff;
+    border: 1px solid #bae1ff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+.check-list {
+    list-style-type: '👉';
+    padding-left: 25px;
+}
+
+/* lang logic */
+[lang="tl"], [lang="jp"] { display:none; }
+body.lang-tl [lang="tl"] { display:block; }
+body.lang-jp [lang="jp"] { display:block; }
+</style>
+</head>
+
+<body class="lang-jp">
+
+<header>
+<nav>
+<a href="../index.html">TOP</a>
+<a href="#">ASD info</a>
+<a href="../QAs/QA1.html">QAs</a>
+</nav>
+<div class="lang-buttons">
+<button onclick="switchLang('tl')">Tagalog</button>
+<button onclick="switchLang('jp')">日本語</button>
+</div>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <div lang="jp">
+            <h2>Q2: 自閉症の2歳の子供です。YouTubeの「ここメロン」でパパやママが出てくるのは大好きですが、現実のパパやママを呼びません。どういうことですか？</h2>
+            
+            <div class="answer-box">
+                とてもよくある現象なので、まずは安心して大丈夫です。
+            </div>
+
+            <h3>■ 起きていることの正体</h3>
+            <p>言葉を知らないのではなく、<strong>「言葉の記憶」と「言葉を使う力（コミュニケーション）」が別々に発達している状態</strong>です。ASDのお子さんには非常によく見られます。</p>
+
+            <h3>■ なぜYouTubeでは「パパ・ママ」が理解できるのか</h3>
+            <ul>
+                <li>同じセリフが何度も繰り返される</li>
+                <li>音・リズム・映像が常にセットで流れる</li>
+                <li>「意味」よりも「パターン」として覚えやすい</li>
+            </ul>
+            <ul class="check-list">
+                <li>言葉というより「音のかたまり（歌に近いもの）」として覚えています。</li>
+            </ul>
+
+            <h3>■ なぜ現実では言わないのか（3つの理由）</h3>
+            <ul>
+                <li><strong>① 意味を理解して使う必要がある</strong><br>
+                    動画はただ再生されるだけですが、現実は「目の前のこの人＝パパ」と認識して自分から呼びかける必要があり、ハードルが高いのです。</li>
+                <li><strong>② 使う「目的」が必要</strong><br>
+                    呼びたい時、伝えたい時に使うという「社会的コミュニケーション能力」がまだ育っている途中です。</li>
+                <li><strong>③ 人への興味の方向性</strong><br>
+                    ASDの子は「人」よりも「物・映像・音」に興味が向きやすく、人を呼ぶ必要性をまだあまり感じていない場合があります。</li>
+            </ul>
+
+            <div class="positive-box">
+                <strong>✨ ポジティブなサイン：</strong><br>
+                音を覚える力（言語の土台）があり、好きなコンテンツ（動機づけ）があるということです。完全に無反応な状態よりも、言葉が出る可能性は高いと言えます。
+            </div>
+
+            <h3>■ 家でできる関わり（重要）</h3>
+            <ul>
+                <li><strong>「言わせる」より「状況を作る」：</strong> パパが近くにいる時に「パパだよ〜」と指差したり、抱っこ前に一瞬止まって「パパ？」と言いそうなのを待ってみる。</li>
+                <li><strong>YouTubeを“現実につなげる”：</strong> 動画にパパが出たら、すかさず本物のパパを指さして「同じだね」と結びつける。</li>
+                <li><strong>1音でもOK：</strong> 「パ」「マ」だけでも全力で反応してあげましょう。完璧を求めないことが大切です。</li>
+            </ul>
+
+            <p><small>※YouTubeは1日1時間以内を目安にし、なるべく一緒に会話しながら見るのが理想的です。</small></p>
+        </div>
+
+        <div lang="tl">
+            <h2>Q2: May ASD ang 2yo ko. Mahilig siya sa Cocomelon pag may "Papa" at "Mama", pero sa totoong buhay ay hindi niya kami tinatawag. Bakit po?</h2>
+            
+            <div class="answer-box">
+                Common na phenomenon ito, kaya huwag po kayong masyadong mag-alala.
+            </div>
+
+            <h3>■ Ano ang tunay na nangyayari?</h3>
+            <p>Hindi sa hindi niya alam ang salita, kundi <strong>magkahiwalay na nag-dedevelop ang kanyang "memorya ng tunog" at "kakayahang gumamit ng salita (communication)."</strong> Karaniwan ito sa mga batang may ASD.</p>
+
+            <h3>■ Bakit sa YouTube ay parang alam niya ang "Papa at Mama"?</h3>
+            <ul>
+                <li>Paulit-ulit ang mga linya sa video.</li>
+                <li>Ang tunog, ritmo, at video ay laging magkakasama.</li>
+                <li>Mas madaling tandaan ang "pattern" kaysa sa "kahulugan."</li>
+            </ul>
+            <ul class="check-list">
+                <li>Tinatandaan niya ito bilang "isang buong tunog" (parang kanta), hindi bilang tawag sa tao.</li>
+            </ul>
+
+            <h3>■ Bakit hindi niya ito masabi sa totoong buhay?</h3>
+            <ul>
+                <li><strong>① Kailangan ng tunay na pag-unawa:</strong> Sa video, nanonood lang siya. Sa realidad, kailangan niyang kilalanin na "Ang taong ito = Papa" at kailangan niyang tawagin ito.</li>
+                <li><strong>② Kailangan ng tamang timing at layunin:</strong> Ang pagtawag para makuha ang atensyon ay bahagi ng social communication na kasalukuyan pa lang niyang natututunan.</li>
+                <li><strong>③ Interes sa tao:</strong> Ang mga batang may ASD ay mas naaakit sa "bagay, video, at tunog" kaysa sa tao, kaya hindi pa nila nararamdaman ang "pangangailangan" na tumawag.</li>
+            </ul>
+
+            <div class="positive-box">
+                <strong>✨ Positive Sign:</strong><br>
+                Ibig sabihin, may kakayahan siyang magsaulo ng tunog (foundation ng language) at mayroon siyang interes. Mas mabuti ito kaysa sa walang reaksyon sa kahit ano.
+            </div>
+
+            <h3>■ Mga pwedeng gawin sa bahay (Importante)</h3>
+            <ul>
+                <li><strong>Gumawa ng sitwasyon:</strong> Pag malapit si Papa, ituro siya at sabihing "Si Papa oh!" Bago buhatin, huminto saglit at hintayin kung susubukan niyang magsalita.</li>
+                <li><strong>I-connect ang YouTube sa reality:</strong> Pag lumabas ang "Papa" sa Cocomelon, ituro agad ang totoong Papa.</li>
+                <li><strong>Kahit isang tunog lang:</strong> "Pa" o "Ma" lang, i-encourage at matuwa na tayo. Huwag pilitin ang perpektong pagbigkas.</li>
+            </ul>
+
+            <p><small>※Limitahan ang YouTube sa 1 oras kada araw at hangga't maaari ay tabihan siya habang nanonood.</small></p>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function switchLang(lang){
+    document.body.className = 'lang-' + lang;
+}
+</script>
+
+</body>
+</html>
