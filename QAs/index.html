@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QAs - Parenting Notebook</title>
+<style>
+:root {
+    --primary-color: #4a4a4a;
+    --accent-color: #ff8c94;
+    --bg-color: #fdfcfc;
+}
+
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-color);
+    color: var(--primary-color);
+    line-height: 1.6;
+}
+
+header {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.lang-buttons button {
+    padding: 5px 12px;
+    cursor: pointer;
+    border: 1px solid var(--accent-color);
+    background: white;
+    border-radius: 5px;
+    color: var(--accent-color);
+}
+
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.qa-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s;
+    border-left: 5px solid var(--accent-color);
+}
+
+.qa-card:hover {
+    transform: translateX(5px);
+}
+
+.qa-tag {
+    display: inline-block;
+    background: var(--accent-color);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+.qa-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* 言語切り替え */
+[lang="tl"], [lang="jp"] { display:none; }
+body.lang-tl [lang="tl"] { display:block; }
+body.lang-jp [lang="jp"] { display:block; }
+</style>
+</head>
+<body class="lang-tl">
+
+<header>
+    <nav>
+        <a href="../index.html">TOP</a>
+        <a href="index.html">QAs</a>
+    </nav>
+    <div class="lang-buttons">
+        <button onclick="switchLang('tl')">Tagalog</button>
+        <button onclick="switchLang('jp')">日本語</button>
+    </div>
+</header>
+
+<main>
+    <h2 lang="tl">Mga Karaniwang Tanong (QAs)</h2>
+    <h2 lang="jp">よくある質問 (QAs)</h2>
+
+    <a href="QA1.html" class="qa-card">
+        <div class="qa-tag">QA 1</div>
+        <p class="qa-title" lang="tl">Handicap ba ang ASD sa future society?</p>
+        <p class="qa-title" lang="jp">これからの社会でASDはハンディキャップになる？</p>
+    </a>
+
+    <a href="QA2.html" class="qa-card">
+        <div class="qa-tag">QA 2</div>
+        <p class="qa-title" lang="tl">Bakit sa YouTube lang siya nagsasalita at hindi sa amin?</p>
+        <p class="qa-title" lang="jp">YouTubeの言葉は出るのに、なぜ現実のパパ・ママは呼ばないの？</p>
+    </a>
+
+    </main>
+
+<script>
+function switchLang(lang){
+    document.body.className = 'lang-' + lang;
+}
+</script>
+</body>
+</html>
