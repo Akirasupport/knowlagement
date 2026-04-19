@@ -1,313 +1,146 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parenting Notebook - Special Edition</title>
-    <style>
-        :root {
-            --primary-color: #4a4a4a;
-            --accent-color: #ff8c94;
-            --yt-color: #ff0000;
-            --bg-color: #fdfcfc;
-            --card-shadow: 0 15px 35px rgba(0,0,0,0.07);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parenting Notebook</title>
 
-        html { scroll-behavior: smooth; }
-        body {
-            margin: 0;
-            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-            color: #333;
-            line-height: 1.8;
-            background-color: var(--bg-color);
-        }
+<style>
+:root {
+    --primary-color: #4a4a4a;
+    --accent-color: #ff8c94;
+    --bg-color: #fdfcfc;
+}
 
-        /* --- Header --- */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-        }
-        .header-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 12px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        nav { display: flex; gap: 15px; }
-        nav a {
-            text-decoration: none;
-            color: var(--primary-color);
-            font-weight: bold;
-            font-size: 0.85rem;
-            transition: 0.3s;
-        }
-        nav a:hover { color: var(--accent-color); }
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: var(--bg-color);
+}
 
-        .lang-switcher button {
-            background: #f0f0f0;
-            border: none;
-            padding: 6px 14px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.75rem;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .lang-switcher button.active {
-            background: var(--accent-color);
-            color: white;
-        }
+/* header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+nav a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
 
-        /* --- Hero --- */
-        .hero {
-            height: 65vh;
-            background: 
-                linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)),
-                url('https://images.unsplash.com/photo-1537655780520-1e392ead81f2?q=80&w=2070&auto=format&fit=crop') no-repeat center/cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 50px;
-        }
-        .hero-content {
-            background: rgba(255, 255, 255, 0.7);
-            padding: 30px 50px;
-            border-radius: 15px;
-            text-align: center;
-            backdrop-filter: blur(4px);
-        }
-        .hero h1 { font-size: clamp(1.8rem, 6vw, 3.5rem); margin: 0; color: #444; }
-        .hero p { margin-top: 10px; font-weight: bold; color: #666; }
+/* hero */
+.hero {
+    height: 65vh;
+    background: url('brother.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+.hero h1 {
+    background: rgba(255,255,255,0.7);
+    padding: 20px;
+    border-radius: 10px;
+}
 
-        /* --- Content Layout --- */
-        main { max-width: 900px; margin: 40px auto; padding: 0 20px; }
-        section { margin-bottom: 80px; scroll-margin-top: 100px; }
-        .card {
-            background: white;
-            padding: 40px;
-            border-radius: 25px;
-            box-shadow: var(--card-shadow);
-        }
-        h2 {
-            font-size: 1.6rem;
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+/* content */
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
 
-        /* --- Detail Styling --- */
-        .point-box {
-            background: #fffafa;
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 25px;
-            border-left: 5px solid var(--accent-color);
-        }
-        .point-title { font-weight: bold; font-size: 1.2rem; color: #d16b6f; display: block; margin-bottom: 10px; }
-        .yt-special-box {
-            background: #fef2f2;
-            border: 2px dashed #fca5a5;
-            padding: 30px;
-            border-radius: 20px;
-        }
-        .yt-tag {
-            background: var(--yt-color);
-            color: white;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.7rem;
-            vertical-align: middle;
-        }
+/* lang */
+[lang="tl"], [lang="jp"] { display:none; }
+body.lang-tl [lang="tl"] { display:block; }
+body.lang-jp [lang="jp"] { display:block; }
 
-        /* --- Language Control --- */
-        [lang="tl"], [lang="jp"] { display: none; }
-        body.lang-tl [lang="tl"] { display: block; }
-        body.lang-jp [lang="jp"] { display: block; }
-
-        /* --- Footer & Utils --- */
-        #back-to-top {
-            position: fixed; bottom: 30px; right: 30px;
-            background: var(--accent-color); color: white;
-            width: 55px; height: 55px; border-radius: 50%;
-            display: flex; justify-content: center; align-items: center;
-            text-decoration: none; font-weight: bold; box-shadow: 0 5px 20px rgba(255,140,148,0.5);
-        }
-        footer { text-align: center; padding: 50px; color: #aaa; font-size: 0.85rem; }
-        ul { padding-left: 20px; }
-        li { margin-bottom: 10px; }
-
-        @media (max-width: 600px) {
-            .card { padding: 25px 15px; }
-            .hero-content { padding: 20px; }
-        }
-    </style>
+</style>
 </head>
-<body id="top" class="lang-tl">
 
-    <header>
-        <div class="header-inner">
-            <nav>
-                <a href="#top">TOP</a>
-                <a href="#points">POINTS</a>
-                <a href="#youtube">YOUTUBE</a>
-            </nav>
-            <div class="lang-switcher">
-                <button id="btn-tl" class="active" onclick="switchLang('tl')">TL</button>
-                <button id="btn-jp" onclick="switchLang('jp')">JP</button>
-            </div>
-        </div>
-    </header>
+<body class="lang-tl">
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Parenting Notebook</h1>
-            <p>Guide for 5y & 2y Active Boys</p>
-        </div>
-    </section>
+<header>
+<div class="header-inner">
+<nav>
+<a href="index.html">TOP</a>
+<a href="#">ASDとは</a>
+<a href="QAs/QA1.html">QAs</a>
+<a href="Posting/index.html">Posting</a>
+</nav>
 
-    <main>
-        <section id="points">
-            <div class="card">
-                <div lang="tl">
-                    <h2>■ ASD Toddler Gabay para sa Nanay</h2>
-                    <div class="point-box">
-                        <span class="point-title">① Structure & Routine</span>
-                        <ul>
-                            <li><strong>Same schedule:</strong> Gising, kain, tulog. Ito ang nagbibigay ng "security" kay baby.</li>
-                            <li><strong>Predictability:</strong> Kapag alam niya ang susunod na mangyayari, mas konti ang tantrums.</li>
-                        </ul>
-                    </div>
-                    <div class="point-box">
-                        <span class="point-title">② Communication Hacks</span>
-                        <ul>
-                            <li><strong>One-word/Short phrase:</strong> Imbes na "Anak, kunin mo yung bola," sabihin lang "Bola, kuha."</li>
-                            <li><strong>Crane Behavior:</strong> Huwag lang ibigay. Sabihin, "Gusto mo water? Sabihin mo 'Water'."</li>
-                        </ul>
-                    </div>
-                </div>
-                <div lang="jp">
-                    <h2>■ ASD児 育児の基本ポイント</h2>
-                    <div class="point-box">
-                        <span class="point-title">① 生活リズムと構造化</span>
-                        <ul>
-                            <li><strong>同じスケジュール:</strong> 起床、食事、睡眠を固定することで、子供に安心感を与えます。</li>
-                            <li><strong>予測可能性:</strong> 「次は何をするか」がわかると、パニックや拒絶が減ります。</li>
-                        </ul>
-                    </div>
-                    <div class="point-box">
-                        <span class="point-title">② 伝わるコミュニケーション</span>
-                        <ul>
-                            <li><strong>短く、はっきりと:</strong> 「おもちゃを片付けて」より「おもちゃ、箱（ポイ）」と短く伝えます。</li>
-                            <li><strong>クレーン現象への対応:</strong> 無言で応じず、「お水、ちょうだい」と言葉をモデル提示します。</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+<div>
+<button onclick="switchLang('tl')">TL</button>
+<button onclick="switchLang('jp')">JP</button>
+</div>
+</div>
+</header>
 
-        <section id="youtube">
-            <div class="card yt-special-box">
-                <div lang="tl">
-                    <h2><span class="yt-tag">SPECIAL</span> YouTube & Cocomelon Strategy</h2>
-                    <p>Masyadong "addictive" ang Cocomelon para sa ASD kids dahil sa fast transitions at repetitive music. Ito ang deep dive strategy:</p>
-                    
-                    <span class="point-title">1. Bakit ito "Dangerous" kapag sobra?</span>
-                    <p>Ang ASD brain ay mahilig sa patterns. Ang YouTube ay "perfect pattern" pero ito ay <strong>Passive Learning</strong>. Nawawala ang chance para sa <strong>Active Interaction</strong> sa totoong tao.</p>
+<section class="hero">
+<h1>Parenting Notebook</h1>
+</section>
 
-                    <span class="point-title">2. Step-by-Step "Detox" (Hindi biglaan)</span>
-                    <ul>
-                        <li><strong>Week 1:</strong> Bawasan ng 1 hour ang total watching time.</li>
-                        <li><strong>Visual Timer:</strong> Gumamit ng timer (parang sandglass o clock) para makita niya kung kailan matatapos. "Kapag nag-beep, Finish na."</li>
-                    </ul>
+<main>
 
-                    <span class="point-title">3. From Screen to Real Play</span>
-                    <p>Kung mahilig siya sa 'Wheels on the Bus' sa YouTube:</p>
-                    <ul>
-                        <li>I-off ang TV, kunin ang toy car.</li>
-                        <li>Kantahin ang song habang pinapaikot ang gulong ng toy car <strong>kasama siya</strong>.</li>
-                        <li>Dito nagiging "Social" ang learning.</li>
-                    </ul>
+<div class="card">
 
-                    <span class="point-title">4. Rule of Threes (療育 Style)</span>
-                    <ul>
-                        <li><strong>Watch:</strong> 15 mins.</li>
-                        <li><strong>Talk/Play:</strong> 15 mins (Tungkol sa pinanood).</li>
-                        <li><strong>Move:</strong> 15 mins (Talon, takbo, swing).</li>
-                    </ul>
-                </div>
+<div lang="tl">
+<h2>ASD Toddler Guide</h2>
 
-                <div lang="jp">
-                    <h2><span class="yt-tag">特別編</span> YouTube・ここメロンとの付き合い方</h2>
-                    <p>ここメロンのような番組は、色彩とリズムが完璧すぎてASD児には「強すぎる報酬」になります。以下の戦略でコントロールしましょう：</p>
+<h3>① Structure & Routine</h3>
+<ul>
+<li>Same schedule → nagbibigay ng security</li>
+<li>Predictability → less tantrums</li>
+</ul>
 
-                    <span class="point-title">1. なぜ「垂れ流し」が良くないのか</span>
-                    <p>動画は一方通行の刺激です。これに慣れすぎると、反応の遅い「人間とのコミュニケーション」を退屈に感じてしまい、視線が合いにくくなったり、言葉の遅れに繋がります。</p>
+<h3>② Communication</h3>
+<ul>
+<li>Short words → "Bola kuha"</li>
+<li>Guide speech → "Water"</li>
+</ul>
+</div>
 
-                    <span class="point-title">2. 「デジタル・デトックス」の進め方</span>
-                    <ul>
-                        <li><strong>視覚的タイマーの活用:</strong> 「あとちょっと」は伝わりません。タイムタイマーなどを使って「赤がなくなったら終わり」と視覚的に示します。</li>
-                        <li><strong>予告の徹底:</strong> 終わる5分前、1分前に声をかけ、心の準備をさせます。</li>
-                    </ul>
+<div lang="jp">
+<h2>ASD児の基本ポイント</h2>
 
-                    <span class="point-title">3. 動画を「教材」に変える魔法</span>
-                    <p>ただ見せるのではなく、親が介入します：</p>
-                    <ul>
-                        <li>一時停止ボタンを押し、「次は何かな？」と予測させる。</li>
-                        <li>動画内のダンスを現実の世界で一緒に再現する。</li>
-                        <li>動画の「外」にある実物（ミニカーなど）へ誘導する。</li>
-                    </ul>
+<h3>① 生活リズム</h3>
+<ul>
+<li>同じスケジュールで安心感</li>
+<li>予測可能性でパニック減少</li>
+</ul>
 
-                    <span class="point-title">4. 療育的な代替案</span>
-                    <ul>
-                        <li><strong>感覚遊びの導入:</strong> YouTubeに代わる強い刺激として、水遊び、粘土、バランスボールなど、脳が「楽しい！」と感じる全身遊びを増やします。</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+<h3>② コミュニケーション</h3>
+<ul>
+<li>短く伝える</li>
+<li>言葉を促す</li>
+</ul>
+</div>
 
-        <section id="qa">
-            <div class="card">
-                <div lang="tl">
-                    <h2>■ Questions & Answers</h2>
-                    <div class="point-box">
-                        <p><strong>Q: Pwede ba talagang zero YouTube?</strong><br>
-                        A: Mahirap ito sa modernong buhay. Ang goal ay hindi 0, kundi "Controlled Use." Gamitin ito bilang tool, hindi babysitter.</p>
-                    </div>
-                </div>
-                <div lang="jp">
-                    <h2>■ よくある質問</h2>
-                    <div class="point-box">
-                        <p><strong>Q: YouTubeを完全に禁止すべき？</strong><br>
-                        A: 現代の育児でゼロは現実的ではありません。大切なのは「禁止」ではなく「コントロール」です。親が主導権を握るツールとして使いましょう。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+</div>
 
-    <a href="#top" id="back-to-top">TOP</a>
+</main>
 
-    <footer>
-        &copy; 2026 Parenting Notebook | For the Bright Future of Our Boys
-    </footer>
+<script>
+function switchLang(lang){
+document.body.className='lang-'+lang;
+}
+</script>
 
-    <script>
-        function switchLang(lang) {
-            document.body.className = 'lang-' + lang;
-            document.getElementById('btn-tl').classList.toggle('active', lang === 'tl');
-            document.getElementById('btn-jp').classList.toggle('active', lang === 'jp');
-        }
-    </script>
 </body>
 </html>
